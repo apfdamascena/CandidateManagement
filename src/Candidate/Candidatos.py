@@ -48,7 +48,7 @@ class Candidato:
     def getSituacaoPosPleito(self): return self.__situacaoPosPleito
     def getSituacaoCandidatura(self): return self.__situacaoCandidatura
     def getBens(self): return self.__bens
-    def getValorTotaisBens(self): return self.__valoresTotaisBens
+    def getValoresTotaisBens(self): return self.__valoresTotaisBens
 
     def setAnoEleicao(self, ano): self.__anoEleicao = ano
     def setSiglaEstado(self, siglaEstado): self.__siglaEstado = siglaEstado
@@ -73,7 +73,7 @@ class Candidato:
     def setSituacaoPosPleito(self, situacaoPosPleito): self.__situacaoPosPleito = situacaoPosPleito
     def setSituacaoCandidatura(self, situacaoCandidatura): self.__situacaoCandidatura = situacaoCandidatura
     def setBens(self, listaBens): self.__bens = listaBens
-    def setValorTotaisBens(self,valorTotaisBens): self.__valoresTotaisBens = valorTotaisBens
+    def setValoresTotaisBens(self,valorTotaisBens): self.__valoresTotaisBens = valorTotaisBens
 
     def incluiBens(self,objeto):
         todosItens = objeto.getInfoList()
@@ -107,6 +107,12 @@ class Candidato:
         for bensIndex in range(len(informacao)):
             apresentacao += informacao[bensIndex][1] + ' |---> ' + 'R$ ' + informacao[bensIndex][3] + '\n' + '       ' + ' '
         return "Bens detalhados: " + "\n" + "        " + apresentacao
+
+    def __str__(self):
+        return '\n' + self.getNomeUrna() + ' -- ' + self.getNumeroUrna() + ' -- '+ self.getSiglaPartido()+'\n' + self.getDescricaoCargo()+' (' + self.getSiglaEstado() + ') ' + self.getNomeMunicipioNascimento()+ ' (' + self.getSiglaUfNascimento() + ') ' + '\n' + '\n' + 'Resumo dos bens:' + '\n' + '\n' + '    -' + 'Total declarado: ' + 'R$ ' + str(self.getValoresTotaisBens()) + '\n' + '    -' + 'Total por tipo de bem: ' + self.apresentaDicionario(self.transformaListaEmDicionario())
+
+    def __repr__(self): return "DadosSobreCandidato(" + self.__str__() + ")"
+
 
 
 
