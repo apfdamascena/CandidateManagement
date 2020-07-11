@@ -47,6 +47,8 @@ class Candidato:
     def getNomeMunicipioNascimento(self): return self.__nomeMunicipioNascimento
     def getSituacaoPosPleito(self): return self.__situacaoPosPleito
     def getSituacaoCandidatura(self): return self.__situacaoCandidatura
+    def getBens(self): return self.__bens
+    def getValorTotaisBens(self): return self.__valoresTotaisBens
 
     def setAnoEleicao(self, ano): self.__anoEleicao = ano
     def setSiglaEstado(self, siglaEstado): self.__siglaEstado = siglaEstado
@@ -70,3 +72,45 @@ class Candidato:
     def setNomeMunicipioNascimento(self, nomeMunicipioNascimento): self.__nomeMunicipioNascimento = nomeMunicipioNascimento
     def setSituacaoPosPleito(self, situacaoPosPleito): self.__situacaoPosPleito = situacaoPosPleito
     def setSituacaoCandidatura(self, situacaoCandidatura): self.__situacaoCandidatura = situacaoCandidatura
+    def setBens(self, listaBens): self.__bens = listaBens
+    def setValorTotaisBens(self,valorTotaisBens): self.__valoresTotaisBens = valorTotaisBens
+
+    def incluiBens(self,objeto):
+        todosItens = objeto.getInfoList()
+        valorAdiciona = float(todosItens[3].replace(',','.'))
+        self.getBens().append(todosItens)
+        self.getValorTotaisBens += valorAdiciona
+    
+    def transformaListaEmDicionario(self):
+        dicionario = {}
+        for bens in self.getBens():
+            item = int(bens[0])
+            if(item not in dicionario):
+                dicionario[item] = bens[2:]
+            else: dicionario[item] += bens[3:4]
+        return dicionario
+    
+    def apresentaDicionario(self,dicionario):
+        apresentacao = ''
+        valor = 0
+        for bens in dicionario:
+            apresentacao += dicionario[bens][0]
+            for conteudo in dicionario[bens][1:]:
+                currentValor = float(conteudo.replace(',','.'))
+                valor += currentValor
+            apresentacao += ' |---> ' + str(valor) + '\n' + '     '
+        return apresentacao
+
+    def apresentaBensDatalhados(self):
+        apresentacao = ''
+        informacao = self.getBens()
+        for bensIndex in range(len(informacao)):
+            apresentacao += informacao[bensIndex][1] + ' |---> ' + 'R$ ' + informacao[bensIndex][3] + '\n' + '       ' + ' '
+        return "Bens detalhados: " + "\n" + "        " + apresentacao
+
+
+
+
+
+
+    

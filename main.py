@@ -7,14 +7,16 @@ class Controle:
         self.__printaBens = {}
         self.__printaDataNascimento = {}
 
-        with open('./data/candidatosTotais.csv', 'r') as entrada:
+        with open('./data/candidatosTotais.csv', 'r',encoding="ISO-8859-1") as entrada:
+            cont = 0
             for linha in entrada:
+                if(cont == 3): break
+                cont += 1
                 if 'DT_GERACAO' in linha:
                     continue
                 linha = ((linha.replace('"','')).strip()).split(';')
                 pessoa = Candidato(linha)
-                self.getTodosItens().append()
-
+                self.getTodosItens().append(pessoa)
         print(self.getTodosItens())
 
     
