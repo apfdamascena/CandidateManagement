@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from src.Candidate.Candidatos import Candidato
 class Controle: 
     def __init__(self):
         self.__todosItens = []
@@ -5,15 +7,14 @@ class Controle:
         self.__printaBens = {}
         self.__printaDataNascimento = {}
 
-        with open('./data/candidatosTotais.csv') as entrada:
-            cont = 0
+        with open('./data/candidatosTotais.csv', 'r') as entrada:
             for linha in entrada:
-                cont += 1
-                if( cont == 3): break
-                if('DT_GERACAO' in linha):
+                if 'DT_GERACAO' in linha:
                     continue
                 linha = ((linha.replace('"','')).strip()).split(';')
+                pessoa = Candidato(linha)
                 self.getTodosItens().append()
+
         print(self.getTodosItens())
 
     
@@ -24,7 +25,8 @@ class Controle:
 
 
     
-
+if __name__ == '__main__':
+    a = Controle()
     
 
 
