@@ -23,7 +23,7 @@ class Candidato:
         self.__situacaoPosPleito = iteravel[53]
         self.__situacaoCandidatura = iteravel[25]
         self.__bens = []
-        self.__valoresTotaisBens = 0
+        self.valoresTotaisBens = 0
     
     def getAnoEleicao(self): return self.__anoEleicao
     def getSiglaEstado(self): return self.__siglaEstado
@@ -48,7 +48,7 @@ class Candidato:
     def getSituacaoPosPleito(self): return self.__situacaoPosPleito
     def getSituacaoCandidatura(self): return self.__situacaoCandidatura
     def getBens(self): return self.__bens
-    def getValoresTotaisBens(self): return self.__valoresTotaisBens
+    def getValoresTotaisBens(self): return self.valoresTotaisBens
 
     def setAnoEleicao(self, ano): self.__anoEleicao = ano
     def setSiglaEstado(self, siglaEstado): self.__siglaEstado = siglaEstado
@@ -73,13 +73,13 @@ class Candidato:
     def setSituacaoPosPleito(self, situacaoPosPleito): self.__situacaoPosPleito = situacaoPosPleito
     def setSituacaoCandidatura(self, situacaoCandidatura): self.__situacaoCandidatura = situacaoCandidatura
     def setBens(self, listaBens): self.__bens = listaBens
-    def setValoresTotaisBens(self,valorTotaisBens): self.__valoresTotaisBens = valorTotaisBens
+    def setValoresTotaisBens(self,valorTotaisBens): self.valoresTotaisBens = valorTotaisBens
 
-    def incluiBens(self,objeto):
+    def incluirBem(self,objeto):
         todosItens = objeto.getInfoList()
         valorAdiciona = float(todosItens[3].replace(',','.'))
         self.getBens().append(todosItens)
-        self.getValorTotaisBens += valorAdiciona
+        self.valoresTotaisBens += valorAdiciona
     
     def transformaListaEmDicionario(self):
         dicionario = {}
