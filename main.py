@@ -48,14 +48,5 @@ class Controle:
                     itens.incluirBem(bens)
             else: continue
 
-
-
-
-    
 if __name__ == '__main__':
     a = Controle()
-    
-
-
-
-

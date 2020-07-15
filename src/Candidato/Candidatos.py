@@ -112,11 +112,3 @@ class Candidato:
         return '\n' + self.getNomeUrna() + ' -- ' + self.getNumeroUrna() + ' -- '+ self.getSiglaPartido()+'\n' + self.getDescricaoCargo()+' (' + self.getSiglaEstado() + ') ' + self.getNomeMunicipioNascimento()+ ' (' + self.getSiglaUfNascimento() + ') ' + '\n' + '\n' + 'Resumo dos bens:' + '\n' + '\n' + '    -' + 'Total declarado: ' + 'R$ ' + str(self.getValoresTotaisBens()) + '\n' + '    -' + 'Total por tipo de bem: ' + self.apresentaDicionario(self.transformaListaEmDicionario())
 
     def __repr__(self): return "DadosSobreCandidato(" + self.__str__() + ")"
-
-
-
-
-
-
-
-    
