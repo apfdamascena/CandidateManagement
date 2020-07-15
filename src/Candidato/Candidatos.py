@@ -1,10 +1,12 @@
+from unicode import unicode
+
 class Candidato:
     def __init__(self, iteravel):
         self.__anoEleicao = iteravel[2]
         self.__siglaEstado = iteravel[10]
         self.__codigoCargo = iteravel[13]
         self.__descricaoCargo = iteravel[14]
-        self.__nome = iteravel[17]
+        self.__nome = unicode(iteravel[17])
         self.__id = iteravel[15]
         self.__numeroUrna = iteravel[16]
         self.__cpf = iteravel[21]
