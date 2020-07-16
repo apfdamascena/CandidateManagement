@@ -30,7 +30,6 @@ class Controle:
                     self.getDicionario()[currentId].append(bens)
                 else: self.getDicionario()[currentId].append(bens)
             self.incluindoBens()
-        print(self.getTodosItens())
         
     def getTodosItens(self): return self.__todosItens
     def getDicionario(self): return self.__dicionario
@@ -47,8 +46,14 @@ class Controle:
 
     def apresentaNomeEmOrdemCrescente(self):
         sortedInfo = sorted(self.getTodosItens(), key=lambda candidato: candidato.getNome())
-        for infos in sortedInfo: print(infos)
-    
+        for candidato in sortedInfo: print(candidato)
+
+    def apresentaBensTotaisCrescente(self):
+        sortedInfo = sorted(self.getTodosItens(), key=lambda candidato: candidato.getValoresTotaisBens())
+        for candidato in sortedInfo: print(candidato)
+
+
+       
 if __name__ == '__main__':
     a = Controle()
-    a.apresentaNomeEmOrdemCrescente()
+    a.apresentaBensTotaisCrescente();
