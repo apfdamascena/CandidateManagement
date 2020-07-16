@@ -30,6 +30,7 @@ class Controle:
                     self.getDicionario()[currentId].append(bens)
                 else: self.getDicionario()[currentId].append(bens)
             self.incluindoBens()
+        print(self.getTodosItens())
         
     def getTodosItens(self): return self.__todosItens
     def getDicionario(self): return self.__dicionario
@@ -43,9 +44,11 @@ class Controle:
                 for bens in self.getDicionario()[currentId]:
                     itens.incluirBem(bens)
             else: continue
-    
-    def apresentaNomeEmOrdemCrescente(self):
 
+    def apresentaNomeEmOrdemCrescente(self):
+        sortedInfo = sorted(self.getTodosItens(), key=lambda candidato: candidato.getNome())
+        for infos in sortedInfo: print(infos)
+    
 if __name__ == '__main__':
     a = Controle()
     a.apresentaNomeEmOrdemCrescente()

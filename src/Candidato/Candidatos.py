@@ -1,12 +1,10 @@
-from unicode import unicode
-
 class Candidato:
     def __init__(self, iteravel):
         self.__anoEleicao = iteravel[2]
         self.__siglaEstado = iteravel[10]
         self.__codigoCargo = iteravel[13]
         self.__descricaoCargo = iteravel[14]
-        self.__nome = unicode(iteravel[17])
+        self.__nome = iteravel[17]
         self.__id = iteravel[15]
         self.__numeroUrna = iteravel[16]
         self.__cpf = iteravel[21]
@@ -111,6 +109,6 @@ class Candidato:
         return "Bens detalhados: " + "\n" + "        " + apresentacao
 
     def __str__(self):
-        return '\n' + self.getNomeUrna() + ' -- ' + self.getNumeroUrna() + ' -- '+ self.getSiglaPartido()+'\n' + self.getDescricaoCargo()+' (' + self.getSiglaEstado() + ') ' + self.getNomeMunicipioNascimento()+ ' (' + self.getSiglaUfNascimento() + ') ' + '\n' + '\n' + 'Resumo dos bens:' + '\n' + '\n' + '    -' + 'Total declarado: ' + 'R$ ' + str(self.getValoresTotaisBens()) + '\n' + '    -' + 'Total por tipo de bem: ' + self.apresentaDicionario(self.transformaListaEmDicionario())
+        return '\n' + self.getNomeUrna() + ' -- ' + self.getNumeroUrna() + ' -- '+ self.getSiglaPartido()+'\n' + self.getDescricaoCargo()+' (' + self.getSiglaEstado() + ') ' + self.getNomeMunicipioNascimento()+ ' (' + self.getSiglaUfNascimento() + ') ' + '\n' + 'NOME: ' + self.getNome() +'\n' + 'RESUMO DOS BENS: ' + '\n' + '\n' + '    -' + 'TOTAL DECLARADO: ' + 'R$ ' + str(self.getValoresTotaisBens()) + '\n' + '    -' + 'TOTAL POR TIPO DE BEM: ' + self.apresentaDicionario(self.transformaListaEmDicionario())
 
     def __repr__(self): return "DadosSobreCandidato(" + self.__str__() + ")"
