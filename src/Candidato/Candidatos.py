@@ -25,55 +25,19 @@ class Candidato:
         self.__bens = []
         self.valoresTotaisBens = 0
     
-    def getAnoEleicao(self): return self.__anoEleicao
     def getSiglaEstado(self): return self.__siglaEstado
     def getCodigoCargo(self): return self.__codigoCargo
     def getDescricaoCargo(self): return self.__descricaoCargo
     def getNome(self): return self.__nome
     def getId(self): return self.__id
     def getNumeroUrna(self): return self.__numeroUrna
-    def getCpf(self): return self.__cpf
     def getNomeUrna(self): return self.__nomeUrna
-    def getNumeroPartido(self): return self.__numeroPartido
-    def getNomePartido(self): return self.__nomePartido
     def getSiglaPartido(self): return self.__siglaPartido
-    def getCodigoOcupacao(self): return self.__codigoOcupacao
     def getDescricaoOcupacao(self): return self.__descriOcupacao
-    def getDataNascimento(self): return self.__dataNascimento
-    def getSexo(self): return self.__sexo
-    def getGrauInstrucao(self): return self.__grauInstrucao
-    def getEstadoCivil(self): return self.__estadoCivil
     def getSiglaUfNascimento(self): return self.__siglaUFnascimento
     def getNomeMunicipioNascimento(self): return self.__nomeMunicipioNascimento
-    def getSituacaoPosPleito(self): return self.__situacaoPosPleito
-    def getSituacaoCandidatura(self): return self.__situacaoCandidatura
     def getBens(self): return self.__bens
     def getValoresTotaisBens(self): return self.valoresTotaisBens
-
-    def setAnoEleicao(self, ano): self.__anoEleicao = ano
-    def setSiglaEstado(self, siglaEstado): self.__siglaEstado = siglaEstado
-    def setCodigoCargo(self, codigoCargo): self.__codigoCargo = codigoCargo
-    def setDescricaoCargo(self, descricaoCargo): self.__descricaoCargo = descricaoCargo 
-    def setNome(self, nome): self.__nome = nome
-    def setId(self, novaId): self.__id = novaId
-    def setNumeroUrna(self, numeroUrna): self.__numeroUrna = numeroUrna
-    def setCpf(self, cpf): self.__cpf = cpf
-    def setNomeUrna(self, nomeUrna): self.__nomeUrna = nomeUrna
-    def setNumeroPartido(self, numeroPartido): self.__numeroPartido = numeroPartido
-    def setNomePartido(self, nomePartido): self.__nomePartido = nomePartido
-    def setSiglaPartido(self, siglaPartido): self.__siglaPartido = siglaPartido
-    def setCodigoOcupacao(self, codigoOcupacao): self.__codigoOcupacao = codigoOcupacao
-    def setDescricaoOcupacao(self, descricaoOcupacao): self.__descriOcupacao = descricaoOcupacao
-    def setDataNascimento(self, dataNascimento): self.__dataNascimento = dataNascimento
-    def setSexo(self, sexo): self.__sexo = sexo
-    def setGrauInstrucao(self, grauInstrucao): self.__grauInstrucao = grauInstrucao
-    def setEstadoCivil(self, estadoCivil): self.__estadoCivil = estadoCivil
-    def setSiglaUfNascimento(self, siglaUfNascimento): self.__siglaUFnascimento = siglaUfNascimento
-    def setNomeMunicipioNascimento(self, nomeMunicipioNascimento): self.__nomeMunicipioNascimento = nomeMunicipioNascimento
-    def setSituacaoPosPleito(self, situacaoPosPleito): self.__situacaoPosPleito = situacaoPosPleito
-    def setSituacaoCandidatura(self, situacaoCandidatura): self.__situacaoCandidatura = situacaoCandidatura
-    def setBens(self, listaBens): self.__bens = listaBens
-    def setValoresTotaisBens(self,valorTotaisBens): self.valoresTotaisBens = valorTotaisBens
 
     def incluirBem(self,objeto):
         todosItens = objeto.getInfoList()
