@@ -52,8 +52,6 @@ class Controle:
         sortedInfo = sorted(self.getTodosItens(), key=lambda candidato: candidato.getValoresTotaisBens())
         for candidato in sortedInfo: print(candidato)
 
-
-       
 if __name__ == '__main__':
     a = Controle()
     a.apresentaBensTotaisCrescente();
