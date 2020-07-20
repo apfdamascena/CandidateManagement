@@ -33,8 +33,6 @@ class Controle:
         
     def getTodosItens(self): return self.__todosItens
     def getDicionario(self): return self.__dicionario
-    def getPrintaBens(self): return self.__printaBens
-    def getPrintaDataNascimento(self): return self.__printaDataNascimento
 
     def incluindoBens(self):
         for itens in self.getTodosItens():
